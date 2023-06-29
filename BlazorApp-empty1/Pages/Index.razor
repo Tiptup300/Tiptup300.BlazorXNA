@@ -1,0 +1,193 @@
+﻿@page "/"
+
+@inject IJSRuntime JsRuntime;
+
+<div id="canvasContainer" @onkeyup="OnKeyUp">
+    <BECanvas @ref="_canvasReference" Width="256" Height="224" ></BECanvas>
+</div>
+
+<img  @ref="_demoSprites" src="Images/BlazorFunPiskelDemo.png" hidden/>
+
+@code {
+    BECanvasComponent? _canvasReference = null;
+    Canvas2DContext? _canvasContext = null;
+    ElementReference _demoSprites;
+
+    // needed to calculate fps
+    float _lastTimestamp;
+    float _fps;
+
+    /// <summary>
+    /// Initialized the canvasses and creates the SnakeGame
+    /// </summary>
+    /// <param name="firstRender">Flag that identifies if this is the first render</param>
+    /// <returns>A completed task</returns>
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+
+        _canvasContext = await _canvasReference.CreateCanvas2DAsync();
+
+        await JsRuntime.InvokeAsync<object>("initGame", DotNetObjectReference.Create(this));
+    }
+
+
+    private class drawImageCall
+    {
+        public bool draw = false;
+        public ElementReference elementReference;
+        public double sx;
+        public double sy;
+        public double sWidth;
+        public double sHeight;
+        public double dx;
+        public double dy;
+        public double dWidth;
+        public double dHeight;
+    }
+
+    bool inited = false;
+
+    const int MAX_DRAW_CALLS = 2048;
+    const float TARGET_FPS_TIMESTEP = 1 / 60f;
+    drawImageCall[] draws = new drawImageCall[MAX_DRAW_CALLS];
+    int drawIndex = 0;
+    int addDrawIndex = 0;
+    float lastDrawTime = 0;
+    /// <summary>
+    /// This method will be called 60 times per second by the requestanimationframe from javascript.
+    /// </summary>
+    /// <param name="timeStamp">The current timestamp</param>
+    /// <param name="width">The width of the canvas</param>
+    /// <param name="height">The height of the canvas</param>
+    /// <returns>A completed task</returns>
+    [JSInvokable]
+    public async ValueTask GameLoop(float timeStamp, int width, int height)
+    {
+        Console.WriteLine("GAMELLOOP START");
+        if(inited == false)
+        {
+            init();
+        }
+        await update(timeStamp);
+        await draw(width, height);
+
+        // calculate fps
+        _fps = 1000 / (timeStamp - _lastTimestamp);
+        _lastTimestamp = timeStamp;
+        Console.WriteLine("GAMELLOOP END");
+    }
+
+    private void init()
+    {
+        for(int i = 0; i < MAX_DRAW_CALLS; i++)
+        {
+            draws[i] = new drawImageCall();
+        }
+        inited = true;
+    }
+
+    float length = 0;
+
+    private async ValueTask update(float timeStep)
+    {
+        drawIndex = addDrawIndex;
+
+
+        draw(
+            elementReference: _demoSprites,
+            sx: 32,
+            sy: 32,
+            sWidth: 32,
+            sHeight: 32,
+            dx: 125 + Math.Sin(length) * 20,
+            dy: 125 + Math.Cos(length) * 20,
+            dWidth: 32,
+            dHeight: 32
+        );
+        draw(
+            elementReference: _demoSprites,
+            sx: 64,
+            sy: 0,
+            sWidth: 32,
+            sHeight: 32,
+            dx: 23 + Math.Sin(length) * 20,
+            dy: 23 + Math.Cos(length) * 20,
+            dWidth: 32,
+            dHeight: 32
+        );
+        draw(
+            elementReference: _demoSprites,
+            sx: 32,
+            sy: 0,
+            sWidth: 32,
+            sHeight: 32,
+            dx: 75 + Math.Sin(length) * 20,
+            dy: 75 + Math.Cos(length) * 20,
+            dWidth: 32,
+            dHeight: 32
+        );
+
+        endDraw();
+
+        length += timeStep * 0.001f;
+    }
+
+    private void draw(ElementReference elementReference, double sx, double sy, double sWidth, double sHeight, double dx, double dy, double dWidth, double dHeight)
+    {
+        draws[addDrawIndex].draw = true;
+        draws[addDrawIndex].elementReference = elementReference;
+        draws[addDrawIndex].sx = sx;
+        draws[addDrawIndex].sy = sy;
+        draws[addDrawIndex].sWidth = sWidth;
+        draws[addDrawIndex].sHeight = sHeight;
+        draws[addDrawIndex].dx = dx;
+        draws[addDrawIndex].dy = dy;
+        draws[addDrawIndex].dWidth = dWidth;
+        draws[addDrawIndex].dHeight = dHeight;
+
+        addDrawIndex = (addDrawIndex + 1) % MAX_DRAW_CALLS;
+    }
+
+    private void endDraw()
+    {
+        draws[addDrawIndex].draw = false;
+        addDrawIndex = (addDrawIndex + 1) % MAX_DRAW_CALLS;
+
+    }
+
+    private async ValueTask draw(int width, int height)
+    {
+        await _canvasContext.BeginBatchAsync();
+        await _canvasContext.ClearRectAsync(0, 0, width, height);
+        await _canvasContext.SetFillStyleAsync("cornflowerblue");
+        await _canvasContext.FillRectAsync(0, 0, width, height);
+        while (draws[drawIndex].draw)
+        {
+            var drawImageCall = draws[drawIndex];
+            await _canvasContext.DrawImageAsync(
+                elementReference: drawImageCall.elementReference,
+                sx: drawImageCall.sx,
+                sy: drawImageCall.sy,
+                sWidth: drawImageCall.sWidth,
+                sHeight: drawImageCall.sHeight,
+                dx: drawImageCall.dx,
+                dy: drawImageCall.dy,
+                dWidth: drawImageCall.dWidth,
+                dHeight: drawImageCall.dHeight
+            );
+            drawIndex = (drawIndex + 1) % MAX_DRAW_CALLS;
+        }
+        await _canvasContext.SetFillStyleAsync("white");
+        await _canvasContext.SetFontAsync("20px Comic Sans MS");
+        await _canvasContext.FillTextAsync($"FPS: {(int)Math.Round(_fps,0)} FRAME: {addDrawIndex}", 10, 50);
+        await _canvasContext.EndBatchAsync();
+    }
+
+    private void OnKeyUp(KeyboardEventArgs args)
+    {
+        Console.WriteLine($"Key pressed: {args.Code}");
+    }
+
+}
