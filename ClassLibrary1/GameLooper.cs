@@ -37,23 +37,12 @@ public class GameLooper : IGameLooper
         _canvasContextDrawer.Begin();
         _canvasContextDrawer.DrawElement(
             elementReference: demoSprite,
-            sx: 32,
-            sy: 32,
-            sWidth: 32,
-            sHeight: 32,
-            dx: 125 + Math.Sin(_lastTimestamp) * 20,
-            dy: 125 + Math.Cos(_lastTimestamp) * 20,
-            dWidth: 32,
-            dHeight: 32
-        );
-        _canvasContextDrawer.DrawElement(
-            elementReference: demoSprite,
-            sx: 64,
+            sx: 0,
             sy: 0,
             sWidth: 32,
             sHeight: 32,
-            dx: 23 + Math.Sin(_lastTimestamp) * 20,
-            dy: 23 + Math.Cos(_lastTimestamp) * 20,
+            dx: 125 + Math.Sin(_lastTimestamp * 0.01f) * 20,
+            dy: 125 + Math.Cos(_lastTimestamp * 0.01f) * 20,
             dWidth: 32,
             dHeight: 32
         );
@@ -63,8 +52,8 @@ public class GameLooper : IGameLooper
             sy: 0,
             sWidth: 32,
             sHeight: 32,
-            dx: 75 + Math.Sin(_lastTimestamp) * 20,
-            dy: 75 + Math.Cos(_lastTimestamp) * 20,
+            dx: 23 + Math.Sin(_lastTimestamp * 0.01f) * 20,
+            dy: 23 + Math.Cos(_lastTimestamp * 0.01f) * 20,
             dWidth: 32,
             dHeight: 32
         );

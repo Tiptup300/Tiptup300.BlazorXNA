@@ -16,13 +16,13 @@ public class CanvasContextDrawer : ICanvasContextDrawer
     const float TARGET_FPS_TIMESTEP = 1 / 60f;
 
     private readonly Canvas2DContextState _canvasContextState;
+    private readonly FPSState _fpsState;
 
     readonly DrawOperation[] draws;
     int drawIndex;
     int addDrawIndex;
-    float _fps;
 
-    public CanvasContextDrawer(Canvas2DContextState canvasContextState)
+    public CanvasContextDrawer(Canvas2DContextState canvasContextState, FPSState fpsState)
     {
         _canvasContextState = canvasContextState;
 
@@ -34,6 +34,7 @@ public class CanvasContextDrawer : ICanvasContextDrawer
 
         drawIndex = 0;
         addDrawIndex = 0;
+        _fpsState = fpsState;
     }
 
     private Canvas2DContext _canvasContext => _canvasContextState.CanvasContext;
@@ -88,8 +89,8 @@ public class CanvasContextDrawer : ICanvasContextDrawer
             drawIndex = (drawIndex + 1) % MAX_DRAW_CALLS;
         }
         await _canvasContext.SetFillStyleAsync("white");
-        await _canvasContext.SetFontAsync("20px Comic Sans MS");
-        await _canvasContext.FillTextAsync($"FPS: {(int)Math.Round(_fps, 0)} FRAME: {addDrawIndex}", 10, 50);
+        await _canvasContext.SetFontAsync("11px Verdana");
+        await _canvasContext.FillTextAsync($"FPS: {_fpsState.FPS}", 1, 10);
         await _canvasContext.EndBatchAsync();
     }
 }
