@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s0szd4vTJUIy0QifNOwhHPEm3Qo1ucNliaa5BQJW/fpM4/ERDJBN8rg0ZyxNeP3F3bfw6y22b3/v4hQezYQjBg==",
+  "dgSpecHash": "ErYkQZNzIn0mpjTUO7Au/OalN79stprQz24RNzwfT+NOln/0eeuSzwKAy8q2LaWOjsJ0ktFTWwM521rI/1Tlog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tiptu.AERO-LAPTOP\\source\\repos\\BlazorApp-empty1\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
+  "projectFilePath": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\blazor.extensions.canvas.1.1.1.nupkg.sha512",
     "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.7\\microsoft.aspnetcore.authorization.7.0.7.nupkg.sha512",

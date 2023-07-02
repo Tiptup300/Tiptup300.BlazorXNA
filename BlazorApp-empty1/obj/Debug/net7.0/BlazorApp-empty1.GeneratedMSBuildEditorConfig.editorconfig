@@ -9,29 +9,25 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorApp-empty1
 build_property.RootNamespace = BlazorApp-empty1
-build_property.ProjectDir = C:\Users\Tiptu.AERO-LAPTOP\source\repos\BlazorApp-empty1\BlazorApp-empty1\
+build_property.ProjectDir = C:\Users\Tiptu.AERO-LAPTOP\repos\Tiptup300.BlazorXNA\BlazorApp-empty1\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Tiptu.AERO-LAPTOP\source\repos\BlazorApp-empty1\BlazorApp-empty1
+build_property.MSBuildProjectDirectory = C:\Users\Tiptu.AERO-LAPTOP\repos\Tiptup300.BlazorXNA\BlazorApp-empty1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Tiptu.AERO-LAPTOP/source/repos/BlazorApp-empty1/BlazorApp-empty1/App.razor]
+[C:/Users/Tiptu.AERO-LAPTOP/repos/Tiptup300.BlazorXNA/BlazorApp-empty1/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tiptu.AERO-LAPTOP/source/repos/BlazorApp-empty1/BlazorApp-empty1/MainLayout.razor]
+[C:/Users/Tiptu.AERO-LAPTOP/repos/Tiptup300.BlazorXNA/BlazorApp-empty1/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tiptu.AERO-LAPTOP/source/repos/BlazorApp-empty1/BlazorApp-empty1/Pages/Index.razor]
+[C:/Users/Tiptu.AERO-LAPTOP/repos/Tiptup300.BlazorXNA/BlazorApp-empty1/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tiptu.AERO-LAPTOP/source/repos/BlazorApp-empty1/BlazorApp-empty1/_Imports.razor]
+[C:/Users/Tiptu.AERO-LAPTOP/repos/Tiptup300.BlazorXNA/BlazorApp-empty1/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Tiptu.AERO-LAPTOP/source/repos/BlazorApp-empty1/BlazorApp-empty1/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-r1qh6qka9l

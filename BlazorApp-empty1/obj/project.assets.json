@@ -499,6 +499,20 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "ClassLibrary1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Blazor.Extensions.Canvas": "1.1.1",
+          "Microsoft.AspNetCore.Components": "7.0.7"
+        },
+        "compile": {
+          "bin/placeholder/ClassLibrary1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibrary1.dll": {}
+        }
       }
     },
     "net7.0/browser-wasm": {
@@ -992,6 +1006,20 @@
         },
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
+        }
+      },
+      "ClassLibrary1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Blazor.Extensions.Canvas": "1.1.1",
+          "Microsoft.AspNetCore.Components": "7.0.7"
+        },
+        "compile": {
+          "bin/placeholder/ClassLibrary1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibrary1.dll": {}
         }
       }
     }
@@ -1859,11 +1887,17 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ClassLibrary1/1.0.0": {
+      "type": "project",
+      "path": "../ClassLibrary1/ClassLibrary1.csproj",
+      "msbuildProject": "../ClassLibrary1/ClassLibrary1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Blazor.Extensions.Canvas >= 1.1.1",
+      "ClassLibrary1 >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.7",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.7"
     ]
@@ -1875,11 +1909,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tiptu.AERO-LAPTOP\\source\\repos\\BlazorApp-empty1\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
+      "projectUniqueName": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
       "projectName": "BlazorApp-empty1",
-      "projectPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\source\\repos\\BlazorApp-empty1\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
+      "projectPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\BlazorApp-empty1\\BlazorApp-empty1.csproj",
       "packagesPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\source\\repos\\BlazorApp-empty1\\BlazorApp-empty1\\obj\\",
+      "outputPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\BlazorApp-empty1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\Tiptu.AERO-LAPTOP\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
@@ -1899,7 +1933,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\ClassLibrary1\\ClassLibrary1.csproj": {
+              "projectPath": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\ClassLibrary1\\ClassLibrary1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

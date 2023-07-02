@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "rSwfZUkjBtcvLprqwHx5gTOy0A/dW4uYal4gIRiab/2FKaoVIYsQZI98gyimj1qzgUrp7HWdZwOvA+oevD1kYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tiptu.AERO-LAPTOP\\repos\\Tiptup300.BlazorXNA\\ClassLibrary1\\ClassLibrary1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\blazor.extensions.canvas.1.1.1.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.7\\microsoft.aspnetcore.authorization.7.0.7.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.7\\microsoft.aspnetcore.components.7.0.7.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.7\\microsoft.aspnetcore.components.analyzers.7.0.7.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\3.1.5\\microsoft.aspnetcore.components.forms.3.1.5.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.components.web\\3.1.5\\microsoft.aspnetcore.components.web.3.1.5.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.7\\microsoft.aspnetcore.metadata.7.0.7.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.5\\microsoft.extensions.dependencyinjection.3.1.5.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Tiptu.AERO-LAPTOP\\.nuget\\packages\\microsoft.jsinterop\\3.1.5\\microsoft.jsinterop.3.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
