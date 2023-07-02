@@ -1,3 +1,3 @@
 # Blazor WASM XNA
 
-[screenshot.png]
+![Alt text](screenshot.png)
